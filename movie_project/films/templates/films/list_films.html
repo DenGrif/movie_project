@@ -1,0 +1,18 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}Список фильмов{% endblock %}
+
+{% block content %}
+    <h1>Список фильмов</h1>
+    <ul class="list-group">
+        {% for film in films %}
+            <li class="list-group-item">
+                <strong>{{ film.title }}</strong><br>
+                <em>{{ film.description }}</em><br>
+                <p>{{ film.review }}</p>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Нет добавленных фильмов.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
